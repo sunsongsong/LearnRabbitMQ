@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MsgReceiver {
 
-    @RabbitListener(queues = RabbitConfig.userQueue)
+   /* @RabbitListener(queues = RabbitConfig.userQueue)
     public void process(String content) {
         try {
             Thread.sleep(10000);
@@ -24,7 +24,7 @@ public class MsgReceiver {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
 

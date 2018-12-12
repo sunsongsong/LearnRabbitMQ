@@ -17,9 +17,8 @@ public class TestController {
 
     @RequestMapping(value = "/send",method = RequestMethod.GET)
     public String userSender() {
-        for(int i=0;i<10;i++){
-            double number = Math.random();
-            msgProducer.send("ABCDEFG " + number);
+        for(int i=0;i<5000;i++){
+            msgProducer.send("ABCDEFG " + i);
         }
         return JsonResult.okResult("成功");
     }
