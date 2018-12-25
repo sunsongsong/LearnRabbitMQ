@@ -1,7 +1,15 @@
 待参考文章和示例：
 https://github.com/hryou0922/spring_boot
 https://blog.csdn.net/u013851082/article/details/69223393
-https://github.com/mylxsw/rabbitmq-pubsub-java
+
+
+例子：
+重试3次后放入死信队列实现例子：（rabbitmq6）
+原链接：https://github.com/mylxsw/rabbitmq-pubsub-java
+全部例子：(LearnRabbitMQ2.git)
+https://gitee.com/huan1993/rabbitmq/tree/master
+避免网络抖动而出现的漏发，retry实现（在发送的时候加入缓存，收到confirm后删除对应key）
+https://www.jianshu.com/p/6579e48d18ae（https://github.com/littlersmall/rabbitmq-access）
 
 重点：
     1.四种交换器(查看rabbitmq2的TestController)
@@ -19,7 +27,7 @@ https://github.com/mylxsw/rabbitmq-pubsub-java
     一般采用消费端，手动确认成功消费后，队列才会移除改消息
     手动确认：消费者拿到消息后，设置手动确认ack，在消息成功被消费后，再发送给队列确认被成功消费
 
-    4.死信队列
+    4.死信队列(主要是对队列进行了参数设置)
 
 
 ####rabbitmq
@@ -38,7 +46,8 @@ https://github.com/mylxsw/rabbitmq-pubsub-java
 chapter1:简单案例
 chapter2:采用手动ack确认机制
 
-
+####rabbitmq6
+重试3次 失败写入死信队列案例 （这里的重试是拿到消息后，如果异常就写入重试队列，如果重试3次失败就写入异常队列）
 
 
 
